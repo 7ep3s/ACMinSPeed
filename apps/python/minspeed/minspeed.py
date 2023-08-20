@@ -46,7 +46,7 @@ def acMain(ac_version):
     global l_currentminspeed,l_steering,l_sector,l_sector1avg,l_sector2avg,l_sector3avg,sector1avg,sector2avg,sector3avg,l_laps
 
     appWindow = ac.newApp("minimum speed indicator")
-    ac.setSize(appWindow, 400, 400)
+    ac.setSize(appWindow, 400, 300)
 
     ac.console("ACMinSpeed Loaded!")
 
