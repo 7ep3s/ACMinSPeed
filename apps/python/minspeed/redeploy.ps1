@@ -1,0 +1,1 @@
+copy-item ".\*" "D:\SteamLibrary\steamapps\common\assettocorsa\apps\python\minspeed" -Force -Recurse
