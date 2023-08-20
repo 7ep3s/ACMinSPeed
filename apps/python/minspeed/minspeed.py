@@ -104,26 +104,39 @@ def acUpdate(deltaT):
         sector2speeds.append(speed)
     if currentsector  == 3:
         sector3speeds.append(speed)
-    
+
     if currentsector != oldsector:
-        if currentsector == 2:
-            sector1avg = Average(sector1speeds)
-            ac.setText(l_sector1avg, "sector 1: {}".format(sector1avg))
-            sector1speeds.clear
-        if currentsector == 3:
-            sector2avg = Average(sector2speeds)
-            ac.setText(l_sector2avg, "sector 2: {}".format(sector2avg))
-            sector2speeds.clear
-        if currentsector == 1:
-            sector3avg = Average(sector3speeds)
-            ac.setText(l_sector3avg, "sector 3: {}".format(sector3avg))
-            sector3speeds.clear
+
+        if info.static.sectorCount == 3:
+
+                if currentsector == 2:
+                    sector1avg = Average(sector1speeds)
+                    ac.setText(l_sector1avg, "sector 1: {}".format(sector1avg))
+                    sector1speeds.clear
+                if currentsector == 3:
+                    sector2avg = Average(sector2speeds)
+                    ac.setText(l_sector2avg, "sector 2: {}".format(sector2avg))
+                    sector2speeds.clear
+                if currentsector == 1:
+                    sector3avg = Average(sector3speeds)
+                    ac.setText(l_sector3avg, "sector 3: {}".format(sector3avg))
+                    sector3speeds.clear
+        
+        if info.static.sectorCount == 2:
+
+                if currentsector == 2:
+                    sector1avg = Average(sector1speeds)
+                    ac.setText(l_sector1avg, "sector 1: {}".format(sector1avg))
+                    sector1speeds.clear
+                if currentsector == 1:
+                    sector2avg = Average(sector2speeds)
+                    ac.setText(l_sector2avg, "sector 2: {}".format(sector2avg))
+                    sector2speeds.clear
+
     if laps != oldlaps:
         sector1speeds.clear()
         sector2speeds.clear()
         sector3speeds.clear()
-
-
 
     oldlaps = laps
     oldsector = currentsector
